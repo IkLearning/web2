@@ -1,7 +1,6 @@
 import React from 'react'
 import Navigation from './Navigation'
-import PostList from './post/PostList'
-import PostCreate from './post/PostCreate'
+import PostContainer from './post/PostContainer'
 
 class Main extends React.Component{
 
@@ -11,8 +10,7 @@ class Main extends React.Component{
             <main>
                 <div className="container">
                     <Navigation />
-                    <PostList />
-                    <PostCreate />
+                    <PostContainer />
                 </div>
             </main>
         )

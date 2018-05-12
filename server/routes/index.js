@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
+var Product = require('../models/product')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-module.exports = router;
+router.get('/products', Product.all)
+      .post('/products', Product.create)
+router.get('/products/:id', Product.findById)
+      // .put('/products/:id', Product.update)
+      // .delete('/products/:id', Product.destroy)
+
+module.exports = router

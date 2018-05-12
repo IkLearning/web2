@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () =>
 <header>
@@ -13,10 +14,8 @@ const Header = () =>
                 </div>
                 <nav className="dropdown dropdown--design-01" data-dropdown-list="logo">
                     <ul className="dropdown__catalog">
-                        <li><a href="index.html">Home Page</a></li>
-                        <li><a href="single-topic.html">Single Topic Page</a></li>
-                        <li><a href="simple-signup.html">Sign up Page</a></li>
-                        <li><a href="create-topic.html">Create Topic Page</a></li>
+                        <li><NavLink to="/"> Home </NavLink></li>
+                        <li><NavLink to="/single-post"> Single Post </NavLink></li>
                     </ul>
                 </nav>
             </div>
@@ -166,7 +165,7 @@ const Header = () =>
             </div>
         </div>
         <div className="header__offset-btn">
-            <a href="create-topic.html"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/main/New_Topic.svg" alt="New Topic" /></a>
+            <Link to="new-thread"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/main/New_Topic.svg" alt="New Topic" /></Link>
         </div>
     </div>
 </header>

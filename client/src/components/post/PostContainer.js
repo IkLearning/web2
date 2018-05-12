@@ -1,20 +1,20 @@
 import React from 'react'
-import PostListItem from './PostListItem'
-import PostListPlaceHolder from './PostListPlaceHolder'
 import PostSingle from './PostSingle'
 import PostCreate from './PostCreate'
+import PostList from './PostList'
+import { Switch, Route } from 'react-router-dom'
+
 
 class PostContainer extends React.Component{
-
-    state = {
-        Post: [],
-
-    }
 
     render(){
 
         return (
-            <h1>Hi</h1>
+            <Switch>
+                <Route exact path='/' component={PostList} />
+                <Route path='/thread/:id' component={PostSingle} />
+                <Route path='/new-thread' component={PostCreate} />
+            </Switch>
         )
     }
 }
