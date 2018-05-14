@@ -1,9 +1,11 @@
-var MyAppModel = require('../config/db')
+var MyAppModel = require('../db/index')
 
 const Product = new MyAppModel({tableName: 'products'})
 
 exports.all = (req, res) =>{
-    Product.find('all', (err, rows, fields) => {
+    Product.query(
+        'SELECT p.id,p.name,p.id_type,t.name as type_name, p.view,p.last_visited, p.created_at from products p, type_products t where p.id_type = t.id'
+    , (err, rows, fields) => {
         if(err)
             return err
         res.send(rows)

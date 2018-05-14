@@ -4,7 +4,8 @@ var MyAppModel = mysqlModel.createConnection({
     host          : 'localhost',
     user          : 'root',
     password      : '',
-    database      : 'fakedy'
+    database      : 'web2'
 })
+
 
 module.exports = MyAppModel
