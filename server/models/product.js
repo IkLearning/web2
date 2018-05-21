@@ -36,7 +36,7 @@ exports.findById = (req, res) =>{
 
 exports.update = (req, res) =>{
     product = new Product
-
+ 
     product.read(req.body.id, (err) => {
         if(err)
             return err

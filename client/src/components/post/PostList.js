@@ -10,7 +10,7 @@ class PostList extends React.Component{
         isLoaded: false
     }
 
-    componentDidMount = ()=>{
+    componentWillMount = ()=>{
         axios.get('http://localhost:3001/products')
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
