@@ -1,9 +1,9 @@
 var express = require('express')
 var router = express.Router()
-var Topic = require('../models/topic')
+var Product = require('../models/product')
 
 
-router.get('/', Topic.all)
+router.get('/', Product.all)
 //       .post('/', Topic.create)
 // router.get('/:id', Topic.findById)
 

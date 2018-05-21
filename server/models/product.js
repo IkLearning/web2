@@ -3,8 +3,7 @@ var MyAppModel = require('../db/index')
 const Product = new MyAppModel({tableName: 'products'})
 
 exports.all = (req, res) =>{
-    Product.query(
-        'SELECT p.id,p.name,p.id_type,t.name as type_name, p.view,p.last_visited, p.created_at from products p, type_products t where p.id_type = t.id'
+    Product.query('SELECT p.id, p.name, p.id_type, p.view, p.unit_price, p.promotion_price, tp.name as catName, p.last_visited FROM products p, type_products tp WHERE p.id_type = tp.id'
     , (err, rows, fields) => {
         if(err)
             return err

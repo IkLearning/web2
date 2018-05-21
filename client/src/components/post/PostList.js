@@ -11,13 +11,14 @@ class PostList extends React.Component{
     }
 
     componentWillMount = ()=>{
-        axios.get('http://localhost:3001/products')
+        axios.get('http://localhost:3001/api/v1/products')
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
                     this.setState({
                         posts: res.data,
                         isLoaded: true
                     })
+                console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -38,9 +39,9 @@ class PostList extends React.Component{
                     <div className="posts__topic">Topic</div>
                     <div className="posts__category">Category</div>
                     <div className="posts__users">Users</div>
-                    <div className="posts__replies">Replies</div>
+                    <div className="posts__replies">Cart</div>
                     <div className="posts__views">Views</div>
-                    <div className="posts__activity">Activity</div>
+                    <div className="posts__activity">Price</div>
                 </div>
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}

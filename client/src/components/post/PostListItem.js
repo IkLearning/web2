@@ -18,7 +18,7 @@ class PostListItem extends React.Component{
                                 </Link>
                             </div>
                         </div>
-                        <div className="posts__category"><Link to={{pathname: `category/${this.props.value.id_type}`}} className="category"><i className="bg-3ebafa"></i> Exchange</Link></div>
+                        <div className="posts__category"><Link to={{pathname: `category/${this.props.value.id_type}`}} className="category"><i className="bg-3ebafa"></i>{this.props.value.catName}</Link></div>
                     </div>
                     <div className="posts__section-right">
                         <div className="posts__users">
@@ -32,9 +32,17 @@ class PostListItem extends React.Component{
                                 <a href="/" className="avatar"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/avatars/R.svg" alt="avatar"/></a>
                             </div>
                         </div>
-                        <div className="posts__replies">207</div>
+                        <div className="posts__replies">
+                            <Link to={{pathname: `/products/${this.props.value.id}`}}>
+                                <i className="fa fa-shopping-cart"></i>
+                            </Link>
+                        </div>
                         <div className="posts__views"><NumericLabel params={{shortFormat: true}}>{this.props.value.view}</NumericLabel></div>
-                        <div className="posts__activity"><TimeFromNow value={this.props.value.last_visited}/></div>
+                        <div className="posts__activity">
+                            <NumericLabel params={{shortFormat: true}}>
+                                {this.props.value.promotion_price != 0 ? this.props.value.promotion_price: this.props.value.unit_price}
+                            </NumericLabel>
+                        </div>
                     </div>
                 </div> 
             </div>
