@@ -4,10 +4,11 @@ var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 var cors = require('cors')
-
+var mongoose = require('mongoose')
 
 var app = express()
 app.use(cors())
+mongoose.connect('mongodb://localhost:27017/web2')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
