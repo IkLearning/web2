@@ -1,5 +1,7 @@
 import React from 'react'
 import PostContainer from './post/PostContainer'
+import AuthContainer from './auth/AuthContainer'
+import { Switch, Route } from 'react-router-dom'
 
 class Main extends React.Component{
 
@@ -8,7 +10,10 @@ class Main extends React.Component{
         return(
             <main>
                 <div className="container">
-                    <PostContainer />
+                    <Switch>
+                        <Route path='/auth' component={AuthContainer} />
+                        <Route path='/:category?/:slug?' component={PostContainer} />
+                    </Switch>
                 </div>
             </main>
         )

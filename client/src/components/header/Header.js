@@ -28,16 +28,6 @@ const Header = () =>
                 </div>
                 <nav className="dropdown dropdown--design-01" data-dropdown-list="menu">
                     <div>
-                        <ul className="dropdown__catalog row">
-                            <li className="col-6"><a href="/">New</a></li>
-                            <li className="col-6"><a href="/">Unread</a></li>
-                            <li className="col-6"><a href="/">Groups</a></li>
-                            <li className="col-6"><a href="/">Users</a></li>
-                            <li className="col-6"><a href="/">Tags</a></li>
-                            <li className="col-6"><a href="/">Shortcuts</a></li>
-                        </ul>
-                    </div>
-                    <div>
                         <h3>Categories</h3>
                         <ul className="dropdown__catalog row">
                             <li className="col-6"><a href="/" className="category"><i className="bg-f9bc64"></i>Hobbies</a></li>
@@ -54,14 +44,6 @@ const Header = () =>
                             <li className="col-6"><a href="/" className="category"><i className="bg-525252"></i>Education</a></li>
                             <li className="col-6"><a href="/" className="category"><i className="bg-777da7"></i>Q&amp;As</a></li>
                             <li className="col-6"><a href="/" className="category"><i className="bg-368f8b"></i>Politics</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul className="dropdown__catalog row">
-                            <li className="col-6"><a href="/">Support</a></li>
-                            <li className="col-6"><a href="/">Forum Rules</a></li>
-                            <li className="col-6"><a href="/">Blog</a></li>
-                            <li className="col-6"><a href="/">About</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -103,8 +85,7 @@ const Header = () =>
             </div>
             <div className="header__user">
                 <div className="header__user-btn" data-dropdown-btn="user">
-                    <img src="http://www.azyrusthemes.com/forum2/fonts/icons/avatars/A.svg" alt="avatar" />
-                    azyrusmax<i className="icon-Arrow_Below"></i>
+                    Account<i className="icon-Arrow_Below"></i>
                 </div>
                 <nav className="dropdown dropdown--design-01" data-dropdown-list="user">
                     <div>
@@ -117,13 +98,9 @@ const Header = () =>
                     </div>
                     <div>
                         <ul className="dropdown__catalog">
-                            <li><a href="/">Dashboard</a></li>
-                            <li><a href="/">Badges</a></li>
-                            <li><a href="/">My Groups</a></li>
-                            <li><a href="/">Notifications</a></li>
-                            <li><a href="/">Topics</a></li>
-                            <li><a href="/">Likes</a></li>
-                            <li><a href="/">Solved</a></li>
+                            <li><Link to="/auth/profile">Profile</Link></li>
+                            <li><Link to="/admin">DashDoard</Link></li>
+                            <li><Link to="/auth/signup">Signup</Link></li>
                         </ul>
                     </div>
                 </nav>
