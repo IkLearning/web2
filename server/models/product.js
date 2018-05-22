@@ -6,7 +6,8 @@ let Schema = mongoose.Schema
 var ProductSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     symbol: String,
     price: {
@@ -23,7 +24,11 @@ var ProductSchema = new mongoose.Schema({
         required: true
     },
     view: Number,
-    lastVisited: Date,
+    description: Schema.Types.Mixed,
+    lastVisited: {
+        type: Date,
+        default: Date.now
+    },
     lastModified: {
         type: Date,
         default: Date.now

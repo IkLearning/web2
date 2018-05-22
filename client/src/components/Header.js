@@ -103,7 +103,7 @@ const Header = () =>
             </div>
             <div className="header__notification">
                 <div className="header__notification-btn" data-dropdown-btn="notification">
-                    <i className="icon-Notification"></i>
+                    <i className="fa fa-shopping-cart"></i>
                     <span>6</span>
                 </div>
                 <div className="dropdown dropdown--design-01" data-dropdown-list="notification">

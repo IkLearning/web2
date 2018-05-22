@@ -12,7 +12,7 @@ class PostContainer extends React.Component{
         return (
             <Switch>
                 <Route exact path='/' component={PostList} />
-                <Route path='/thread/:id' component={PostSingle} />
+                <Route exact location={{pathname:'/:category/:slug'}} component={PostSingle} />
                 <Route path='/new-thread' component={PostCreate} />
             </Switch>
         )

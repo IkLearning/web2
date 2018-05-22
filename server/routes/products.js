@@ -31,12 +31,23 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-    Product.findById(req.params.id,(err, rows) => {
+    Product.findById(req.params.id).populate('category').exec((err, product) => {
         if(err)
             res.status(500).json({status: 'ERROR'})
-        else
-            res.status(200).json({status: 'OK', item: rows})
+        else{
+            let { view } = product
+            view++
+            product.update({
+                view
+            },(err) => {
+                if(err)
+                    res.status(500).json({status: 'ERROR'})
+                else
+                    res.status(200).json({status: 'OK', item: product})
+            })
+        }
     })
+
 })
 
 router.put('/:id', (req, res) => {
@@ -46,12 +57,13 @@ router.put('/:id', (req, res) => {
         name: req.body.name,
         price: req.body.price,
         category: req.body.category,
-        quantity: req.body.quantity,
+        quantity: req.body.quantity, 
         view: req.body.view,
+        lastVisited: req.body.lastVisited,
         lastModified: Date.now()
     },(err) => {
         if(err)
-            res.status(500).json({status: err.message})
+            res.status(500).json({status: 'ERROR'})
         else
             res.status(200).json({status: 'OK'})
     })
