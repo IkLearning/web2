@@ -25,10 +25,7 @@ var ProductSchema = new mongoose.Schema({
     },
     view: Number,
     description: Schema.Types.Mixed,
-    lastVisited: {
-        type: Date,
-        default: Date.now
-    },
+    lastVisited: Date,
     lastModified: {
         type: Date,
         default: Date.now

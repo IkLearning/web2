@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5b0351bc2b8ccf1d04dd82c4"},"slug":"macbook-air","name":"MacBook Air","lastModified":{"$date":{"$numberLong":"1526944188836"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b0351c62b8ccf1d04dd82c5"},"slug":"macbook-retina","name":"MacBook Retina","lastModified":{"$date":{"$numberLong":"1526944198345"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b0351cb2b8ccf1d04dd82c6"},"slug":"macbook-pro","name":"MacBook Pro","lastModified":{"$date":{"$numberLong":"1526944203941"}},"__v":{"$numberInt":"0"}}

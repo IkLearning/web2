@@ -11,7 +11,6 @@ var app = express()
 app.use(cors())
 mongoose.connect('mongodb://localhost:27017/web2')
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -30,6 +29,9 @@ app.use(methodOverride((req,res)=>{
   })
 )
 
+
+
+app.use('/api/v1/users', require('./routes/users'))
 app.use('/api/v1/products', require('./routes/products'))
 app.use('/api/v1/categories', require('./routes/categories'))
 

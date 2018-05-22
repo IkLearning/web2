@@ -12,6 +12,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/category/:id', (req, res) => {
+    Product.find({category: req.params.id}).populate('category').exec((err, rows) => {
+        if(err)
+            res.status(500).json({status: 'ERROR'})
+        else
+            res.status(200).json({status: 'OK', items: rows})
+    })
+})
+
 router.post('/', (req, res) => {
 
     let product = new Product({
@@ -38,7 +47,8 @@ router.get('/:id', (req, res) => {
             let { view } = product
             view++
             product.update({
-                view
+                view,
+                lastVisited: Date.now()
             },(err) => {
                 if(err)
                     res.status(500).json({status: 'ERROR'})
