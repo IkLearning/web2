@@ -2,18 +2,19 @@ import React from 'react'
 import PostSingle from './PostSingle'
 import PostCreate from './PostCreate'
 import PostList from './PostList'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route} from 'react-router-dom'
+import history from '../history/history'
 
 
 class PostContainer extends React.Component{
 
     render(){
 
-        return (
-            <Switch>
+        return ( 
+            <Switch history={history}>
                 <Route exact path='/' component={PostList} />
-                <Route exact location={{pathname:'/:category/:slug'}} component={PostSingle} />
-                <Route path='/new-thread' component={PostCreate} />
+                <Route location={{pathname:'/:category/:slug'}} component={PostSingle} />
+                <Route exact path={{pathname:'/new-product'}} component={PostCreate} />
             </Switch>
         )
     }

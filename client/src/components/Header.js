@@ -165,7 +165,7 @@ const Header = () =>
             </div>
         </div>
         <div className="header__offset-btn">
-            <Link to="new-thread"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/main/New_Topic.svg" alt="New Topic" /></Link>
+            <Link to="/new-product"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/main/New_Topic.svg" alt="New Topic" /></Link>
         </div>
     </div>
 </header>
