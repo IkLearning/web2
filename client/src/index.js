@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import history from './components/history/History'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render((
-    <BrowserRouter history={history}>
+    <Router history={history}>
         <App />
-    </BrowserRouter>
+    </Router>
     
 ), document.getElementById('root'))
 registerServiceWorker()

@@ -24,7 +24,12 @@ class PostListItem extends React.Component{
                                 </Link>
                             </div>
                         </div>
-                        <div className="posts__category"><Link to={{pathname: `/${this.props.value.category.slug}`}} className="category"><i className="bg-3ebafa"></i>{this.props.value.category.name}</Link></div>
+                        <div className="posts__category">
+                            <a onClick={() => this.props.getByCat(this.props.value.category._id)} className="category">
+                                <i className="bg-3ebafa"></i>
+                                {this.props.value.category.name}
+                            </a>
+                        </div>
                     </div>
                     <div className="posts__section-right">
                         <div className="posts__replies">

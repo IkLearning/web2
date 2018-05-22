@@ -19,12 +19,25 @@ class PostList extends React.Component{
                         isLoaded: true
                     })
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({isLoaded: false}))
+    }
+
+    getByCat = (id) => {
+        axios.get(`http://localhost:3001/api/v1/products/category/5b0351cb2b8ccf1d04dd82c6`)
+            .then(res =>{
+                if(res.status === 200 || res.statusText === 'OK')
+                    this.setState({
+                        items: res.data.items,
+                        isLoaded: true
+                    })
+                console.log(res.data.items)
+            })
+            .catch(err => this.setState({isLoaded: false}))
     }
 
     renderItem = (i) => {
         let items = [...this.state.items]
-        return <PostListItem key={items[i]._id} value={items[i]} />
+        return <PostListItem key={items[i]._id} value={items[i]} getByCat={this.getByCat}/>
     }
 
 

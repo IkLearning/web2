@@ -8,15 +8,12 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
-  height: 100%;
-}
-main {
-  height: 100%;
 }
 
-#root{
-  height: 100%;
+main {
+  min-height: 400px;
 }
+
 
 
 h1,
@@ -3203,10 +3200,7 @@ select {
 }
 .footer {
   background-color: #ffffff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
 }
 @media only screen and (min-width: 1040px) {
   .footer {
