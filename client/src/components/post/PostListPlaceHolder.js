@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactPlaceholder from 'react-placeholder'
-import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
+import { RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
 import "react-placeholder/lib/reactPlaceholder.css"
 
 
@@ -9,7 +9,9 @@ const PostListPlaceHolder = () =>
         ready={false}
         showLoadingAnimation={true}
         customPlaceholder={myCustom}
-    />
+    >
+        <br/>
+    </ReactPlaceholder>
 
 
 const myCustom = (

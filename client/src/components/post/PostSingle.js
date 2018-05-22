@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import TimeFromNow from '../time/TimeFromNow'
-import { Link } from 'react-router-dom'
 
 class PostSingle extends React.Component{
 
@@ -66,7 +65,7 @@ class PostSingle extends React.Component{
                                             <span><TimeFromNow value= {item.lastVisited} /></span>
                                         </div>
                                         <div>
-                                            <a href="#" onClick={this.addToCart}><i className="fa fa-cart-plus"></i></a>
+                                            <a href="/" onClick={this.addToCart}><i className="fa fa-cart-plus"></i></a>
                                         </div>
                                     </div>
                                     <div className="topic__footer-share">

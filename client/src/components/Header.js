@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () =>
 <header>
@@ -9,57 +9,22 @@ const Header = () =>
                 <h1>
                     <img src="http://www.azyrusthemes.com/forum2/fonts/icons/main/Logo_Forum.svg" alt="logo" />
                 </h1>
-                <div className="header__logo-btn" data-dropdown-btn="logo">
-                    Unity<i className="icon-Arrow_Below"></i>
+                <div className="header__logo-btn">
+                    <Link to="/"> Home </Link>
                 </div>
-                <nav className="dropdown dropdown--design-01" data-dropdown-list="logo">
-                    <ul className="dropdown__catalog">
-                        <li><NavLink to="/"> Home </NavLink></li>
-                        <li><NavLink to="/single-post"> Single Post </NavLink></li>
-                    </ul>
-                </nav>
             </div>
             <div className="header__search">
                 <form action="/">
                     <label>
                         <i className="icon-Search js-header-search-btn-open"></i>
-                        <input type="search" placeholder="Search all forums" className="form-control" />
+                        <input type="search" placeholder="Search all products" className="form-control" />
                     </label>
                 </form>
                 <div className="header__search-close js-header-search-btn-close"><i className="icon-Cancel"></i></div>
-                <div className="header__search-btn" data-dropdown-btn="search">
-                    Topics<i className="icon-Arrow_Below"></i>
-                </div>
-                <div className="dropdown dropdown--design-01" data-dropdown-list="search">
-                    <ul>
-                        <li>
-                            <label>
-                                <label className="custom-checkbox">
-                                    <input type="checkbox" checked="checked" />
-                                    <i></i>
-                                </label>Search Titles Only
-                            </label>
-
-                        </li>
-                        <li>
-                            <label>
-                                <label className="custom-checkbox">
-                                    <input type="checkbox" />
-                                    <i></i>
-                                </label>Show Results as Posts
-                            </label>
-                        </li>
-                        <li>
-                            <a href="/">
-                                <i className="icon-Advanced_Search"></i>Advanced Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
             <div className="header__menu">
                 <div className="header__menu-btn" data-dropdown-btn="menu">
-                    Latest Topics<i className="icon-Menu_Icon"></i>
+                    Menu<i className="icon-Menu_Icon"></i>
                 </div>
                 <nav className="dropdown dropdown--design-01" data-dropdown-list="menu">
                     <div>

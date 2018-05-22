@@ -1,6 +1,6 @@
 @import '../vendor/bootstrap/v3/bootstrap.min.css';
 @import '../vendor/bootstrap/v4/bootstrap-grid.css';
-body {
+html, body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
   line-height: 1.75;
@@ -8,10 +8,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
+  height: 100%;
 }
 main {
-  min-height: 400px;
+  height: 100%;
 }
+
+#root{
+  height: 100%;
+}
+
+
 h1,
 h2,
 h3,
@@ -2700,8 +2707,8 @@ select {
 }
 @media only screen and (min-width: 1040px) {
   .header > .container > div {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 @media only screen and (max-width: 1039px) {
@@ -3196,6 +3203,10 @@ select {
 }
 .footer {
   background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 @media only screen and (min-width: 1040px) {
   .footer {

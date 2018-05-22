@@ -13,8 +13,8 @@ class PostContainer extends React.Component{
         return ( 
             <Switch history={history}>
                 <Route exact path='/' component={PostList} />
-                <Route location={{pathname:'/:category/:slug'}} component={PostSingle} />
-                <Route exact path={{pathname:'/new-product'}} component={PostCreate} />
+                <Route path='/:category/:slug' component={PostSingle} />
+                <Route path='/new-product' component={PostCreate} />
             </Switch>
         )
     }

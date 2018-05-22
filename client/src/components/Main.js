@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigation from './Navigation'
 import PostContainer from './post/PostContainer'
 
 class Main extends React.Component{
@@ -9,7 +8,6 @@ class Main extends React.Component{
         return(
             <main>
                 <div className="container">
-                    <Navigation />
                     <PostContainer />
                 </div>
             </main>

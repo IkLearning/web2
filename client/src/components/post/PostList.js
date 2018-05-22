@@ -10,7 +10,7 @@ class PostList extends React.Component{
         isLoaded: false
     }
 
-    componentWillMount = ()=>{
+    componentDidMount = ()=>{
         axios.get('http://localhost:3001/api/v1/products')
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
@@ -18,7 +18,6 @@ class PostList extends React.Component{
                         items: res.data.items,
                         isLoaded: true
                     })
-                console.log(res.data.items)
             })
             .catch(err => console.log(err))
     }
@@ -36,18 +35,19 @@ class PostList extends React.Component{
         return(
             <div className="posts">
                 <div className="posts__head">
-                    <div className="posts__topic">Name</div>
+                    <div className="posts__topic">Product</div>
                     <div className="posts__category">Category</div>
                     <div className="posts__views">Cart</div>
                     <div className="posts__views">Views</div>
                     <div className="posts__views">Price</div>
                     <div className="posts__activity">Activity</div>
                 </div>
-                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
-                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
-                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
-                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
-                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
+                {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
                 {isLoaded &&
                     items.map((item, i) =>this.renderItem(i))
                 }
