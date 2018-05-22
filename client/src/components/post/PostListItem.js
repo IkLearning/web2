@@ -13,35 +13,27 @@ class PostListItem extends React.Component{
                     <div className="posts__section-left">
                         <div className="posts__topic">
                             <div className="posts__content">
-                                <Link to={{pathname: `/thread/${this.props.value.id}`}}>
+                                <Link to={{pathname: `/${this.props.value.category.slug}/${this.props.value.slug}`}}>
                                     <h3>{this.props.value.name}</h3>
                                 </Link>
                             </div>
                         </div>
-                        <div className="posts__category"><Link to={{pathname: `category/${this.props.value.id_type}`}} className="category"><i className="bg-3ebafa"></i>{this.props.value.catName}</Link></div>
+                        <div className="posts__category"><Link to={{pathname: `/${this.props.value.category.slug}`}} className="category"><i className="bg-3ebafa"></i>{this.props.value.category.name}</Link></div>
                     </div>
                     <div className="posts__section-right">
-                        <div className="posts__users">
-                            <div>
-                                <a href="/" className="avatar"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/avatars/E.svg" alt="avatar"/></a>
-                            </div>
-                            <div>
-                                <a href="/" className="avatar"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/avatars/I.svg" alt="avatar"/></a>
-                            </div>
-                            <div>
-                                <a href="/" className="avatar"><img src="http://www.azyrusthemes.com/forum2/fonts/icons/avatars/R.svg" alt="avatar"/></a>
-                            </div>
-                        </div>
                         <div className="posts__replies">
-                            <Link to={{pathname: `/products/${this.props.value.id}`}}>
+                            <Link to={{pathname: `/${this.props.value.category.slug}/${this.props.value.slug}`}}>
                                 <i className="fa fa-shopping-cart"></i>
                             </Link>
                         </div>
                         <div className="posts__views"><NumericLabel params={{shortFormat: true}}>{this.props.value.view}</NumericLabel></div>
-                        <div className="posts__activity">
+                        <div className="posts__views">
                             <NumericLabel params={{shortFormat: true}}>
-                                {this.props.value.promotion_price != 0 ? this.props.value.promotion_price: this.props.value.unit_price}
+                                {this.props.value.price}
                             </NumericLabel>
+                        </div>
+                        <div className="posts__activity text-center">
+                            <TimeFromNow value={this.props.value.lastVisited} />
                         </div>
                     </div>
                 </div> 

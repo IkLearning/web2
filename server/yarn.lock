@@ -645,6 +645,10 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
+extend@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.0.tgz#5a474353b9f3353ddd8176dfd37b91c83a46f1d4"
+
 extglob@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/extglob/-/extglob-2.0.4.tgz#ad00fe4dc612a9232e8718711dc5cb5ab0285543"
@@ -1280,6 +1284,12 @@ mongodb@3.0.8:
 mongoose-legacy-pluralize@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
+
+mongoose-url-slugs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/mongoose-url-slugs/-/mongoose-url-slugs-1.0.2.tgz#dd2b62f70e3df38ef7eb0c3bb53d5fdef9602426"
+  dependencies:
+    extend "3.0.0"
 
 mongoose@^5.1.2:
   version "5.1.2"

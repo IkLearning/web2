@@ -1,10 +1,11 @@
 var express = require('express')
 var router = express.Router()
-var Product = require('../models/product')
+var Category = require('../models/category')
 
 
 router.get('/', (req, res) => {
-    Product.find().populate('category').exec((err, rows) => {
+
+    Category.find({},(err, rows) => {
         if(err)
             res.status(500).json({status: 'ERROR'})
         else
@@ -14,14 +15,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 
-    let product = new Product({
-        name: req.body.name,
-        price: req.body.price,
-        category_id: req.body.category,
-        quantity: req.body.quantity
-    })
-
-    product.save((err) => {
+    let category = new Category({ name: req.body.name })
+    category.save((err) => {
         if(err)
             res.status(500).json({status: 'ERROR'})
         else
@@ -31,9 +26,9 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-    Product.findById(req.params.id,(err, rows) => {
+    Category.findById(req.params.id,(err, rows) => {
         if(err)
-            res.status(500).json({status: 'ERROR'})
+            res.status(500).json({status: "ERROR"})
         else
             res.status(200).json({status: 'OK', item: rows})
     })
@@ -41,17 +36,13 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
 
-    let product = Product.findById(req.params.id)
-    product.update({
+    let category = Category.findById(req.params.id)
+    category.update({
         name: req.body.name,
-        price: req.body.price,
-        category: req.body.category,
-        quantity: req.body.quantity,
-        view: req.body.view,
-        lastModified: Date.now()
+        lastModified: Date.now
     },(err) => {
         if(err)
-            res.status(500).json({status: err.message})
+            res.status(500).json({status: 'ERROR'})
         else
             res.status(200).json({status: 'OK'})
     })
@@ -59,14 +50,15 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
 
-    let product = Product.findById(req.params.id)
-    product.remove((err) => {
+    let category = Category.findById(req.params.id)
+    category.remove((err) => {
         if(err)
             res.status(500).json({status: 'ERROR'})
         else
             res.status(200).json({status: 'OK'})
     })
 })
+
 
 
 module.exports = router

@@ -6,7 +6,7 @@ import axios from 'axios'
 class PostList extends React.Component{
 
     state = {
-        posts: [],
+        items: [],
         isLoaded: false
     }
 
@@ -15,33 +15,33 @@ class PostList extends React.Component{
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
                     this.setState({
-                        posts: res.data,
+                        items: res.data.items,
                         isLoaded: true
                     })
-                console.log(res.data)
+                console.log(res.data.items)
             })
             .catch(err => console.log(err))
     }
 
     renderItem = (i) => {
-        let posts = [...this.state.posts]
-        return <PostListItem key={posts[i].id} value={posts[i]} />
+        let items = [...this.state.items]
+        return <PostListItem key={items[i]._id} value={items[i]} />
     }
 
 
     render(){
 
-        let { isLoaded, posts } = {...this.state}
+        let { isLoaded, items } = {...this.state}
 
         return(
             <div className="posts">
                 <div className="posts__head">
-                    <div className="posts__topic">Topic</div>
+                    <div className="posts__topic">Name</div>
                     <div className="posts__category">Category</div>
-                    <div className="posts__users">Users</div>
-                    <div className="posts__replies">Cart</div>
+                    <div className="posts__views">Cart</div>
                     <div className="posts__views">Views</div>
-                    <div className="posts__activity">Price</div>
+                    <div className="posts__views">Price</div>
+                    <div className="posts__activity">Activity</div>
                 </div>
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
@@ -49,7 +49,7 @@ class PostList extends React.Component{
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}}/>}
                 {isLoaded &&
-                    posts.map((item, i) =>this.renderItem(i))
+                    items.map((item, i) =>this.renderItem(i))
                 }
             </div>
         )
